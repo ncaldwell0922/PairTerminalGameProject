@@ -7,7 +7,7 @@ using System.Threading.Tasks;
     public class PocketMonsters_UI
     {
         private readonly Backpack_Lists _lRepo = new Backpack_Lists();
-        // private readonly PMCenters_Stacks _sRepo = new PMCenters_Stacks();
+        // private readonly PMCenters _sRepo = new PMCenters();
         public readonly PointDexitron_Dictionary _dRepo = new PointDexitron_Dictionary();
 
         public void Run()
@@ -81,7 +81,7 @@ using System.Threading.Tasks;
             // Title Screen and Instructions
             System.Console.WriteLine("\tPOCKET MONSTERS \n" +
             "This game is about aventure, monsters that fit into your pocket and defeating your arch nemesis \n" +
-            "for his title of POCKET MONSTER Champion /n"+
+            "for his title of POCKET MONSTER Champion \n"+
             "=================================================================== \n" +
             "\tHOW TO PLAY:" +
             "1. Enter your name. \n" +
@@ -93,6 +93,7 @@ using System.Threading.Tasks;
             // "5. You may only carry THREE monsters on your Utility Belt and TEN monsters in your BackPack. \n" 
             "===================================================================================================== \n");
             PressAnyKey();
+            PressXToExit();
 
             Console.Clear();
             // Enter Name
@@ -121,7 +122,7 @@ using System.Threading.Tasks;
                 {
                     _dRepo.DeletePocketMonster(1);
                     _lRepo.AddPMToList(starterPMOne);
-                    System.Console.WriteLine($"Congrats! {starterPMOne} has been added to your Utility Belt!");
+                    System.Console.WriteLine("Congrats! Bulbasaur has been added to your Backpack!");
                     
                 }
                 else
@@ -140,7 +141,7 @@ using System.Threading.Tasks;
                 {
                     _dRepo.DeletePocketMonster(4);
                     _lRepo.AddPMToList(starterPMTwo);
-                    System.Console.WriteLine($"Congrats! {starterPMTwo} has been added to your Utility Belt!");
+                    System.Console.WriteLine("Congrats! Charmander has been added to your Backpack!");
                     
                 }
                 else
@@ -151,7 +152,7 @@ using System.Threading.Tasks;
             }
             else if(numInput == 3)
             {
-                System.Console.WriteLine("Are you sure you wanted Charmander? y/n \n");
+                System.Console.WriteLine("Are you sure you wanted Squirtle? y/n \n");
                 string selectPM = Console.ReadLine().ToLower();
                 PocketMonsters starterPMThree = _dRepo.GetPMByKey(7);
 
@@ -159,7 +160,7 @@ using System.Threading.Tasks;
                 {
                     _dRepo.DeletePocketMonster(7);
                     _lRepo.AddPMToList(starterPMThree);
-                    System.Console.WriteLine($"Congrats! {starterPMThree} has been added to your Utility Belt!");
+                    System.Console.WriteLine("Congrats! Squirtle has been added to your Backpack!");
                     
                 }
                 else
@@ -180,29 +181,461 @@ using System.Threading.Tasks;
             "for title of Champion!");
             PressAnyKey();
 
-
+            directSelectOne();
             }
         }
-            //First Encounter
-            private void firstEncounter()
+
+        
+            // Encounters
+            // private void firstEncounter()
+            // {
+            //     Console.Clear();
+                
+            //     System.Console.WriteLine("You step outside to a beautiful sunny day ready for adventure when \n" +
+            //     $"all of a sudden, you come across a {randPM}. With all your skills, you capture it and \n" +
+            //     "add it to your backpack.");
+
+            //     PressAnyKey();
+
+
+            // }
+
+            // Direction Selections
+            private void directSelectOne()
             {
                 Console.Clear();
 
-                string choiceOne;
+                System.Console.WriteLine("You have come to a T in the road. Both directions look promising. \n" +
+                "Which way do you want to go? \n" +
+                "Left \n" +
+                "Right \n");
 
-                System.Console.WriteLine("");
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceOne;
+                        choiceOne = Console.ReadLine().ToLower();
+                        switch(choiceOne)
+                            {
+                                case "left":
+                                case "l":
+                                    directSelectTwoLeft();
+                                    break;
+                                case "right":
+                                case "r":
+                                    directSelectTwoRight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectTwoLeft()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The road ahead bends to the right. Looks like that is \n" +
+                "the only path available. Which way would you like to travel? \n" +
+                "Right \n" +
+                "Go Back \n");
+                
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceTwo;
+                        choiceTwo = Console.ReadLine().ToLower();
+                        switch(choiceTwo)
+                            {
+                                case "right":
+                                case "r":
+                                    directSelectThree();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectOne();
+                                    break;
+                                default:
+                                System.Console.WriteLine("Invalid Input. Try again..");
+                                input = true;
+                                break;
+                            }
+                    }
+            }
+
+            private void directSelectTwoRight()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("Another T in the road! You can see a field to your right \n" +
+                "and another pathway to your left. Which way would you like to go? \n" +
+                "Left \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceThree;
+                        choiceThree = Console.ReadLine().ToLower();
+                        switch(choiceThree)
+                            {
+                                case "left":
+                                case "l":
+                                    directSelectSeven();
+                                    break;
+                                case "right":
+                                case "r":
+                                    deadEndOne();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectOne();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectThree()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path ahead seems to just keep going. \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceFour;
+                        choiceFour = Console.ReadLine().ToLower();
+                        switch(choiceFour)
+                            {
+                                case "straight":
+                                case "s":
+                                    // secondEncounter();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectTwoLeft();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectSeven()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path starts to lead into a small forest. \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceSeven;
+                        choiceSeven = Console.ReadLine().ToLower();
+                        switch(choiceSeven)
+                            {
+                                case "straight":
+                                case "s":
+                                    directSelectEight();
+                                    break;
+                                case "right":
+                                case "r":
+                                    // MonsterCenterTwo();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectTwoRight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectEight()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path gets darker as the trees cover more of the \n" +
+                "sky. The route has split off in different directions. \n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Straight \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceEight;
+                        choiceEight = Console.ReadLine().ToLower();
+                        switch(choiceEight)
+                            {
+                                case "left":
+                                case "l":
+                                    deadEndThree();
+                                    break;
+                                case "straight":
+                                case "s":
+                                    // thirdEncounter();
+                                    break;
+                                case "right":
+                                case "r":
+                                    directSelectTwelve();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectTwoLeft();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectTwelve()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("As the path twists and turns through the trees,  \n" +
+                "it takes a sharp left turn between two giant bushes. \n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceTwelve;
+                        choiceTwelve = Console.ReadLine().ToLower();
+                        switch(choiceTwelve)
+                            {
+                                case "left":
+                                case "l":
+                                    directSelectThirteen();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectEight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectThirteen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("Another T in the road! Both paths look dark and scary.\n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceThirteen;
+                        choiceThirteen = Console.ReadLine().ToLower();
+                        switch(choiceThirteen)
+                            {
+                                case "left":
+                                case "l":
+                                    deadEndSix();
+                                    break;
+                                case "right":
+                                case "r":
+                                    deadEndSeven();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectTwelve();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+
+
+
+
+            // Dead Ends
+            private void deadEndOne()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The road ends at a nice serene field full of \n" +
+                "wildflowers and... well thats about it. You should try another path. \n" +
+                " \n" +
+                "Go back");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string deadEndNum1;
+                        deadEndNum1 = Console.ReadLine().ToLower();
+                        switch(deadEndNum1)
+                            {
+                                case "go back":
+                                case "back":
+                                    directSelectTwoRight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void deadEndTwo()
+            {
 
             }
-        
-        
-        
-        // private bool CloseApplication()
-        // {
-        //     Console.Clear();
-        //     System.Console.WriteLine("Thank you for playing!!!");
-        //     PressAnyKeyToExit();
-        //     return false;
-        // }
+
+            private void deadEndThree()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("You come to a lake in the forest. A light breeze \n" +
+                "creates ripples on the water. A pretty sight but unfortunately there is nowhere \n" +
+                "else to go from here. It's a pretty big lake. You should try another path. \n" +
+                " \n" +
+                "Go back");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string deadEndNum2;
+                        deadEndNum2 = Console.ReadLine().ToLower();
+                        switch(deadEndNum2)
+                            {
+                                case "go back":
+                                case "back":
+                                    directSelectEight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void deadEndFour()
+            {
+
+            }
+
+            private void deadEndFive()
+            {
+
+            }
+
+            private void deadEndSix()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path slowly starts to disappear and you find \n" +
+                "yourself surrounded by vegetation and trees. Doesn't seem like there is \n" +
+                "a way through it. You should try another path. \n" +
+                " \n" +
+                "Go back");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string deadEndNum6;
+                        deadEndNum6 = Console.ReadLine().ToLower();
+                        switch(deadEndNum6)
+                            {
+                                case "go back":
+                                case "back":
+                                    directSelectThirteen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void deadEndSeven()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("One the path lies one giant Snorlax, who seems to \n" +
+                "be in a deep sleep. On either side of him are thick and thorny vines. There isn't \n" +
+                "anyway to go forward from here. You should try another path. \n" +
+                " \n" +
+                "Go back");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string deadEndNum7;
+                        deadEndNum7 = Console.ReadLine().ToLower();
+                        switch(deadEndNum7)
+                            {
+                                case "go back":
+                                case "back":
+                                    directSelectThirteen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+
+
+
+            //Pocket Monster Centers
+            // private void MonsterCenterOne()
+            // {
+
+            // }
+            // private void MonsterCenterTwo()
+            // {
+
+            // }
+            // private void MonsterCenterThree()
+            // {
+
+            // }
+
 
         //HELPER METHODS
         // private PocketMonsters PMInDictionary(int id)
@@ -224,10 +657,52 @@ using System.Threading.Tasks;
             Console.ReadLine();
         }
         
-        // private void PressAnyKeyToExit()
-        // {
-        //     System.Console.WriteLine("Press ANY Key to exit the game...");
-        //     Console.ReadLine();
-        // }
+        private void PressXToExit()
+        {
+            System.Console.WriteLine("Press X to exit the game...");
+            string userInput = Console.ReadLine().ToLower();
+
+            if(userInput == "x")
+            {
+                Console.Clear();
+                System.Console.WriteLine("Thanks for playing!");
+                PressAnyKey();
+                Environment.Exit(0);
+            }
+            
+        }
+
+        private void PressAnyKeyGameOver()
+        {
+            System.Console.WriteLine("Game Over \n" +
+            "Would you like to try again or exit the game? \n" +
+            "Try Again \n" +
+            "Exit Game \n");
+
+
+                bool input = true;
+                    while(input)
+                    {
+                        string gameOver;
+                        gameOver = Console.ReadLine().ToLower();
+                        switch(gameOver)
+                            {
+                                case "try again":
+                                    directSelectOne();
+                                    break;
+                                case "exit game":
+                                case "exit":
+                                    Console.Clear();
+                                    System.Console.WriteLine("Thanks for playing!");
+                                    PressAnyKey();
+                                    Environment.Exit(0);
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+        }
     }
     

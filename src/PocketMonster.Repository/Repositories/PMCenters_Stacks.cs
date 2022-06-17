@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-    public class PMCenters_Stacks
+    public class PMCenters
     {
         private readonly Stack<PocketMonsters> _stacksRepo = new Stack<PocketMonsters>();
 
