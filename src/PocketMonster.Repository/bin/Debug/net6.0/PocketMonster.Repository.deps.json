@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PocketMonster.Repository/1.0.0": {
+        "dependencies": {
+          "PocketMonster.Data": "1.0.0"
+        },
+        "runtime": {
+          "PocketMonster.Repository.dll": {}
+        }
+      },
+      "PocketMonster.Data/1.0.0": {
+        "runtime": {
+          "PocketMonster.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PocketMonster.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PocketMonster.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

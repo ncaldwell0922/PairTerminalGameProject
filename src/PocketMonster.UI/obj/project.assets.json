@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/PocketMonster.Data.dll": {}
         }
+      },
+      "PocketMonster.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "PocketMonster.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PocketMonster.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PocketMonster.Repository.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../PocketMonster.Data/PocketMonster.Data.csproj",
       "msbuildProject": "../PocketMonster.Data/PocketMonster.Data.csproj"
+    },
+    "PocketMonster.Repository/1.0.0": {
+      "type": "project",
+      "path": "../PocketMonster.Repository/PocketMonster.Repository.csproj",
+      "msbuildProject": "../PocketMonster.Repository/PocketMonster.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "PocketMonster.Data >= 1.0.0"
+      "PocketMonster.Data >= 1.0.0",
+      "PocketMonster.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Repository\\PocketMonster.Repository.csproj",
-      "projectName": "PocketMonster.Repository",
-      "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Repository\\PocketMonster.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.UI\\PocketMonsters.UI.csproj",
+      "projectName": "PocketMonsters.UI",
+      "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.UI\\PocketMonsters.UI.csproj",
       "packagesPath": "C:\\Users\\ncald\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Repository\\obj\\",
+      "outputPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ncald\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -53,6 +72,9 @@
           "projectReferences": {
             "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Data\\PocketMonster.Data.csproj": {
               "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Data\\PocketMonster.Data.csproj"
+            },
+            "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Repository\\PocketMonster.Repository.csproj": {
+              "projectPath": "C:\\Users\\ncald\\OneDrive\\Documents\\ElevenFiftyProjects\\codingFoundations\\dotnetProjects\\PairTerminalGameProject\\src\\PocketMonster.Repository\\PocketMonster.Repository.csproj"
             }
           }
         }
