@@ -199,6 +199,20 @@ using System.Threading.Tasks;
 
 
             // }
+            // private void secondEncounter();
+            // {
+
+            // }
+
+            // private void thirdEncounter()
+            // {
+
+            // }
+
+            // private void fourthEncounter()
+            // {
+
+            // }
 
             // Direction Selections
             private void directSelectOne()
@@ -245,9 +259,9 @@ using System.Threading.Tasks;
                 bool input = true;
                     while(input)
                     {
-                        string choiceTwo;
-                        choiceTwo = Console.ReadLine().ToLower();
-                        switch(choiceTwo)
+                        string choiceTwoLeft;
+                        choiceTwoLeft = Console.ReadLine().ToLower();
+                        switch(choiceTwoLeft)
                             {
                                 case "right":
                                 case "r":
@@ -278,9 +292,9 @@ using System.Threading.Tasks;
                 bool input = true;
                     while(input)
                     {
-                        string choiceThree;
-                        choiceThree = Console.ReadLine().ToLower();
-                        switch(choiceThree)
+                        string choiceTwoRight;
+                        choiceTwoRight = Console.ReadLine().ToLower();
+                        switch(choiceTwoRight)
                             {
                                 case "left":
                                 case "l":
@@ -314,9 +328,9 @@ using System.Threading.Tasks;
                 bool input = true;
                     while(input)
                     {
-                        string choiceFour;
-                        choiceFour = Console.ReadLine().ToLower();
-                        switch(choiceFour)
+                        string choiceThree;
+                        choiceThree = Console.ReadLine().ToLower();
+                        switch(choiceThree)
                             {
                                 case "straight":
                                 case "s":
@@ -325,6 +339,72 @@ using System.Threading.Tasks;
                                 case "go back":
                                 case "back":
                                     directSelectTwoLeft();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectFour()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("As you leave the Monster Center, the path \n" +
+                "goes up a hill. As it comes down the other side, it veers to the right. \n" +
+                "Which way would you like to go? \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceFour;
+                        choiceFour = Console.ReadLine().ToLower();
+                        switch(choiceFour)
+                            {
+                                case "right":
+                                case "r":
+                                    directSelectFive();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    // MonsterCenterOne();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectFive()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("You keep following the path in front of you. \n" +
+                "You can't see other options other than go back the way you came. \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceFour;
+                        choiceFour = Console.ReadLine().ToLower();
+                        switch(choiceFour)
+                            {
+                                case "straight":
+                                case "s":
+                                    deadEndTwo();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectFour();
                                     break;
                                 default:
                                     System.Console.WriteLine("Invalid Input. Try again..");
@@ -414,6 +494,125 @@ using System.Threading.Tasks;
                     }
             }
 
+            private void directSelectNine()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path is dark and it's getting hard to see. \n" + 
+                "What you can see is that the route has split off in different directions again. \n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Straight \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceNine;
+                        choiceNine = Console.ReadLine().ToLower();
+                        switch(choiceNine)
+                            {
+                                case "left":
+                                case "l":
+                                    deadEndFour();
+                                    break;
+                                case "straight":
+                                case "s":
+                                    deadEndFive();
+                                    break;
+                                case "right":
+                                case "r":
+                                    directSelectTen();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectEight();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectTen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("You finally reach the end of the forest and you see the  \n" +
+                "bright blue sky you hadn't seen for awhile. The path curves to left ahead. \n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceTen;
+                        choiceTen = Console.ReadLine().ToLower();
+                        switch(choiceTen)
+                            {
+                                case "left":
+                                case "l":
+                                    directSelectEleven();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectNine();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectEleven()
+            {
+                System.Console.WriteLine("As the path comes to an end see a few different paths. \n" + 
+                "To your left looks like more road and creatures lurking about, to your right you can \n" +
+                "see the signs for a Monster Center and directly in front of you is the town's Pocket \n" +
+                "Monster Gym. \n" +
+                "Which way would you like to go? \n" +
+                "Left \n" +
+                "Straight \n" +
+                "Right \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceEleven;
+                        choiceEleven = Console.ReadLine().ToLower();
+                        switch(choiceEleven)
+                            {
+                                case "left":
+                                case "l":
+                                    deadEndNine();
+                                    break;
+                                case "straight":
+                                case "s":
+                                    gymLeaderBattle();
+                                    break;
+                                case "right":
+                                case "r":
+                                    MonsterCenterThree();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectTen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
             private void directSelectTwelve()
             {
                 Console.Clear();
@@ -484,6 +683,136 @@ using System.Threading.Tasks;
                     }
             }
 
+            private void directSelectFourteen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path turns into a straight shot to what \n" +
+                "looks to be a clearing ahead. The road is really long though... \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceFourteen;
+                        choiceFourteen = Console.ReadLine().ToLower();
+                        switch(choiceFourteen)
+                            {
+                                case "straight":
+                                case "s":
+                                    directSelectFifteen();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    MonsterCenterTwo();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectFifteen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("The path just keeps going... \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceFifteen;
+                        choiceFifteen = Console.ReadLine().ToLower();
+                        switch(choiceFifteen)
+                            {
+                                case "straight":
+                                case "s":
+                                    directSelectSixteen();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectFourteen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectSixteen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("and going... \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceSixteen;
+                        choiceSixteen = Console.ReadLine().ToLower();
+                        switch(choiceSixteen)
+                            {
+                                case "straight":
+                                case "s":
+                                    directSelectSeventeen();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectFifteen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
+            private void directSelectSeventeen()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("aaaannndddd going......it looks like there might be \n" +
+                "something ahead. \n" +
+                "Which way would you like to go? \n" +
+                "Straight \n" +
+                "Go Back \n");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string choiceSeventeen;
+                        choiceSeventeen = Console.ReadLine().ToLower();
+                        switch(choiceSeventeen)
+                            {
+                                case "straight":
+                                case "s":
+                                    deadEndEight();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectSixteen();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
+            }
+
 
 
 
@@ -519,7 +848,15 @@ using System.Threading.Tasks;
 
             private void deadEndTwo()
             {
+                Console.Clear();
 
+                System.Console.WriteLine("As you enjoy the beauty of nature, you miss \n" +
+                "the giant hole in the ground. You fall in the hole and break you leg. It takes \n" +
+                "a couple of hours for someone to find you and take you to get help. You must \n" +
+                "continue this adventure another time. \n" +
+                " \n");
+
+                PressAnyKeyGameOver();
             }
 
             private void deadEndThree()
@@ -553,12 +890,47 @@ using System.Threading.Tasks;
 
             private void deadEndFour()
             {
+                Console.Clear();
+                //Fourth Encounter
+                System.Console.WriteLine("As the path gets smaller, the trees get closer and then  \n" +
+                "path disappears. You notice something hiding in the bushes. \n");
 
+
+                System.Console.WriteLine("There is nothing else to see here. You should try another path. \n" +
+                " \n" +
+                "Go back");
+
+                bool input = true;
+                    while(input)
+                    {
+                        string deadEndNum4;
+                        deadEndNum4 = Console.ReadLine().ToLower();
+                        switch(deadEndNum4)
+                            {
+                                case "go back":
+                                case "back":
+                                    directSelectNine();
+                                    break;
+                                default:
+                                    System.Console.WriteLine("Invalid Input. Try again..");
+                                    input = true;
+                                    break;
+                            }
+                    }
             }
 
             private void deadEndFive()
             {
+                Console.Clear();
 
+                System.Console.WriteLine("The path gets narrow and the trees around are drawing \n" +
+                "closer but you push through trying to get to the other side. You are fighting so hard \n" +
+                "to get through the vegetation that you don't notice the steep cliff. You slip and fall \n" +
+                "breaking your legs. A couple hours later you are luckily air-lifted from the forest. \n " +
+                "You must continue this adventure another time. \n" +
+                " \n");
+
+                PressAnyKeyGameOver();
             }
 
             private void deadEndSix()
@@ -617,6 +989,23 @@ using System.Threading.Tasks;
                                     break;
                             }
                     }
+            }
+
+            private void deadEndEight()
+            {
+                Console.Clear();
+
+                System.Console.WriteLine("As you are strolling along on this long route you \n" +
+                "come across a field. In the distance you see some wild Pocket Monsters. As \n" +
+                "you walk across the field, the grass comes up to your knees and it gets \n" +
+                "harder to walk. All of a sudden, you step in a trap that was laid out for \n" +
+                "a mosnster and it breaks your leg. A local traveler spots you and calls for help. \n" +
+                "Emergency services rescue you and take you to the nearest hospital. \n" +
+                "You must continue this adventure another time. \n" +
+                
+                " \n");
+
+                PressAnyKeyGameOver();
             }
 
 
