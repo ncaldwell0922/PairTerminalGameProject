@@ -189,7 +189,8 @@ using System.Threading.Tasks;
                 " \n" +
                 "Which way would you like to go? \n" +
                 "Left \n" +
-                "Right \n");
+                "Right \n" +
+                "Go Back \n");
 
                 bool input = true;
                     while(input)
@@ -205,6 +206,10 @@ using System.Threading.Tasks;
                                 case "right":
                                 case "r":
                                     directSelectTwoRight();
+                                    break;
+                                case "go back":
+                                case "back":
+                                    directSelectZero();
                                     break;
                                 default:
                                     System.Console.WriteLine("Invalid Input. Try again..");
@@ -841,7 +846,7 @@ using System.Threading.Tasks;
                 Console.Clear();
 
                 System.Console.WriteLine("You have come to yet another T in the road. The path \n" +
-                "to the left seems safe and you can feel a breeze. The path to the right takes you  \n" +
+                "to the right seems safe and you can feel a breeze. The path to the left takes you  \n" +
                 "to the mountain. \n" +
                 " \n" +
                 "Which way would you like to go? \n" +
@@ -1134,7 +1139,7 @@ using System.Threading.Tasks;
                 Console.Clear();
 
                 System.Console.WriteLine("As you enjoy the beauty of nature, you miss \n" +
-                "the giant hole in the ground dug out by a nearby Plowlett. You fall in the hole and break you leg. \n" +
+                "the giant hole in the ground dug out by a nearby Plowlett. You fall in the hole and break your leg. \n" +
                 "It takes a couple of hours for someone to find you and take you to get help. \n" +
                 "You must continue this adventure another time. \n" +
                 " \n");
@@ -1389,7 +1394,7 @@ using System.Threading.Tasks;
                 "with a Rockler. He doesn't look happy to see you. He swings to give you a punch but \n" +
                 "you dodge it. Unfortunately the Rockler hits the side of the cave and causes a cave in. \n" +
                 "You miss the heavy chunk of fall out but during your escape you trip and fall and large \n" +
-                "rocks and boulders cruch your legs, breaking them. Luckily some nearby hikers here the \n" +
+                "rocks and boulders crush your legs, breaking them. Luckily some nearby hikers here the \n" +
                 "commotion, find you and call emergency services. \n" +
                 "You must continue this adventure another time. \n" +
                 " \n");
