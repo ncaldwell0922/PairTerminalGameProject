@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "PocketMonsters.UI/1.0.0": {
         "dependencies": {
-          "PocketMonster.Data": "1.0.0",
-          "PocketMonster.Repository": "1.0.0"
+          "PocketMonster.Data": "1.0.0"
         },
         "runtime": {
           "PocketMonsters.UI.dll": {}
@@ -18,14 +17,6 @@
       "PocketMonster.Data/1.0.0": {
         "runtime": {
           "PocketMonster.Data.dll": {}
-        }
-      },
-      "PocketMonster.Repository/1.0.0": {
-        "dependencies": {
-          "PocketMonster.Data": "1.0.0"
-        },
-        "runtime": {
-          "PocketMonster.Repository.dll": {}
         }
       }
     }
@@ -37,11 +28,6 @@
       "sha512": ""
     },
     "PocketMonster.Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PocketMonster.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
